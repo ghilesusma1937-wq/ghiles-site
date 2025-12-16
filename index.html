@@ -1,63 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Ghiles | Créateur de sites web</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ghiles, créateur de sites web modernes et professionnels.">
-    <meta name="keywords" content="création site web, développeur web, Ghiles">
-    <meta name="author" content="Ghiles">
+<meta charset="UTF-8">
+<title>Ghiles | Site Moderne et Dynamique</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* --- RESET --- */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0f172a;color:#fff;line-height:1.6;scroll-behavior:smooth;}
+a{text-decoration:none;color:#60a5fa;transition:0.3s;cursor:pointer;}
+a:hover{color:#22c55e;}
+input,textarea{width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;}
+button{padding:12px 25px;background:#22c55e;color:#020617;font-weight:bold;border:none;border-radius:25px;cursor:pointer;transition:0.3s;}
+button:hover{background:#16a34a;}
 
-    <style>
-        /* === RESET & BASE === */
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Segoe UI', Arial, sans-serif; background:#0f172a; color:#e5e7eb; line-height:1.6; }
-        h1,h2,h3{ margin-bottom:15px; }
-        a{ text-decoration:none; }
+/* --- HEADER --- */
+header{position:relative;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;background:#111827;}
+#headerCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;}
+.header-content{position:relative;z-index:2;}
+.header-content h1{font-size:70px;color:#22c55e;animation:fadeSlide 1s ease forwards;opacity:0;}
+.header-content h2{font-size:32px;margin:15px 0;color:#60a5fa;opacity:0;animation:fadeSlide 1s ease forwards 0.5s;}
+.header-content p{font-size:20px;max-width:700px;margin:auto;opacity:0;animation:fadeSlide 1s ease forwards 1s;}
+.cta{display:inline-block;margin-top:25px;padding:15px 35px;background:#22c55e;color:#020617;font-weight:bold;border-radius:30px;opacity:0;animation:fadeSlide 1s ease forwards 1.5s;transition:0.3s;}
+.cta:hover{background:#16a34a;}
+@keyframes fadeSlide{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
 
-        /* === HEADER === */
-        header { position:relative; overflow:hidden; height:100vh; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; }
-        #headerCanvas { position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; }
-        .header-content { position:relative; z-index:2; color:#fff; }
-        .header-content h1 { font-size:80px; animation:fadeSlide 1s ease forwards; opacity:0; }
-        .header-content h2 { font-size:32px; color:#60a5fa; margin-bottom:20px; opacity:0; animation:fadeSlide 1s ease forwards 0.5s; }
-        .header-content p { font-size:20px; max-width:700px; margin:auto; opacity:0; animation:fadeSlide 1s ease forwards 1s; }
+/* --- NAV --- */
+nav{background:#020617;padding:15px;text-align:center;position:sticky;top:0;z-index:3;}
+nav a{margin:0 15px;font-weight:600;}
 
-        /* Bouton */
-        .cta { display:inline-block; margin-top:25px; padding:15px 35px; background:#22c55e; color:#020617; font-weight:bold; border-radius:30px; opacity:0; animation:fadeSlide 1s ease forwards 1.5s; transition:0.3s; }
-        .cta:hover { background:#16a34a; }
+/* --- SECTION --- */
+section{max-width:1200px;margin:auto;padding:70px 20px;opacity:0;transform:translateY(30px);transition:all 1s ease;}
+section.visible{opacity:1;transform:translateY(0);}
+h2{font-size:36px;margin-bottom:25px;color:#60a5fa;}
+p{font-size:18px;margin-bottom:20px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.card{background:#020617;padding:20px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.4);transition:0.3s;overflow:hidden;cursor:pointer;}
+.card:hover{transform:translateY(-8px);background:#1e293b;}
+.card img{width:100%;border-radius:10px;margin-bottom:15px;}
+.card h3{color:#93c5fd;margin-bottom:10px;}
+footer{background:#020617;text-align:center;padding:25px;font-size:14px;opacity:0.8;}
+@media(max-width:600px){.header-content h1{font-size:50px;}.header-content h2{font-size:24px;}}
 
-        @keyframes fadeSlide { 0%{opacity:0; transform:translateY(30px);} 100%{opacity:1; transform:translateY(0);} }
-
-        /* === NAV === */
-        nav { background:#020617; padding:15px; text-align:center; position:sticky; top:0; z-index:3; }
-        nav a { color:#e5e7eb; margin:0 15px; font-weight:600; transition:0.3s; }
-        nav a:hover { color:#60a5fa; }
-
-        /* === SECTIONS === */
-        section { max-width:1100px; margin:auto; padding:70px 20px; }
-        .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
-        .card { background:#020617; padding:30px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.4); transition: transform 0.3s, background 0.3s; }
-        .card:hover { transform:translateY(-8px); background:#1e293b; }
-        .card h3{ color:#93c5fd; margin-bottom:10px; }
-
-        /* === CONTACT === */
-        .contact { background: linear-gradient(135deg, #1e3a8a, #020617); border-radius:20px; padding:40px; text-align:center; }
-        .contact p{ font-size:18px; margin-bottom:20px; }
-        input, textarea, button { width:100%; max-width:400px; padding:12px; border-radius:8px; border:none; margin:5px 0; }
-        button { background:#22c55e; color:#020617; font-weight:bold; cursor:pointer; transition:0.3s; }
-        button:hover { background:#16a34a; }
-
-        /* FOOTER */
-        footer { background:#020617; text-align:center; padding:25px; font-size:14px; opacity:0.8; }
-
-        /* === ANIMATIONS SECTIONS === */
-        section { opacity:0; transform:translateY(30px); transition:all 1s ease; }
-        section.visible { opacity:1; transform:translateY(0); }
-
-        /* RESPONSIVE */
-        @media(max-width:600px){ .header-content h1{ font-size:50px; } .header-content h2{ font-size:24px; } }
-    </style>
+/* --- CONTACT FORM --- */
+.contact form {display:flex;flex-direction:column;gap:10px;}
+</style>
 </head>
 <body>
 
@@ -66,131 +53,117 @@
     <canvas id="headerCanvas"></canvas>
     <div class="header-content">
         <h1>Ghiles</h1>
-        <h2>Créateur de sites web modernes et professionnels</h2>
-        <p>Je conçois des sites rapides, élégants et adaptés à vos besoins pour particuliers et entreprises.</p>
-        <a href="#contact" class="cta">Demander un devis</a>
+        <h2>Site Moderne et Dynamique</h2>
+        <p>Découvrez mes projets récents, services et nouveautés.</p>
+        <a href="#portfolio" class="cta">Voir Portfolio</a>
     </div>
 </header>
 
 <!-- NAV -->
 <nav>
+    <a href="#accueil">Accueil</a>
     <a href="#apropos">À propos</a>
     <a href="#services">Services</a>
     <a href="#portfolio">Portfolio</a>
+    <a href="#nouveautes">Nouveautés</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <!-- À PROPOS -->
 <section id="apropos">
-    <h2>À propos de moi</h2>
-    <p>
-        Je m'appelle <strong>Ghiles</strong>, créateur de sites web modernes et professionnels.
-        Passionné par le web, je conçois des sites rapides, élégants et adaptés à tous les appareils.
-        Je travaille aussi bien pour les particuliers que pour les entreprises, en mettant toujours
-        l’accent sur la qualité, la performance et le design. Chaque projet est pour moi une opportunité
-        de créer quelque chose d’unique et qui aide mes clients à se démarquer sur Internet.
-    </p>
-</section>
-
-<!-- POURQUOI ME CHOISIR -->
-<section id="pourquoi">
-    <h2>Pourquoi me choisir ?</h2>
-    <div class="cards">
-        <div class="card"><h3>✅ Sérieux</h3><p>Respect des délais et besoins du client.</p></div>
-        <div class="card"><h3>⚡ Rapidité</h3><p>Sites rapides et optimisés pour tous les écrans.</p></div>
-        <div class="card"><h3>📱 Mobile friendly</h3><p>Parfait sur téléphone, tablette et PC.</p></div>
-    </div>
+<h2>À propos de moi</h2>
+<p>Je m'appelle <strong>Ghiles</strong>, créateur de sites web modernes et professionnels. Je réalise des sites pour restaurants, boutiques, jeux, portfolios et plus. Chaque projet est unique et conçu pour se démarquer.</p>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-    <h2>Services</h2>
-    <div class="cards">
-        <div class="card"><h3>🌐 Sites vitrines</h3><p>Présentez votre activité avec un site moderne et clair.</p></div>
-        <div class="card"><h3>🎨 Design moderne</h3><p>Design élégant, responsive et optimisé.</p></div>
-        <div class="card"><h3>⚡ Performance</h3><p>Sites rapides, propres et efficaces.</p></div>
-        <div class="card"><h3>🔒 Fiabilité</h3><p>Code propre, sécurisé et facile à maintenir.</p></div>
-    </div>
+<h2>Services</h2>
+<div class="cards">
+<div class="card"><h3>Sites vitrines</h3><p>Présentez votre entreprise élégamment.</p></div>
+<div class="card"><h3>Design moderne</h3><p>Sites responsive et attractifs.</p></div>
+<div class="card"><h3>Portfolio</h3><p>Montrez vos projets au monde entier.</p></div>
+<div class="card"><h3>Jeux HTML/JS</h3><p>Jeux interactifs en ligne.</p></div>
+</div>
 </section>
 
 <!-- PORTFOLIO -->
 <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="cards">
-        <div class="card"><h3>Site vitrine</h3><p>Site professionnel développé pour un client fictif.</p></div>
-        <div class="card"><h3>Jeu 2D</h3><p>Jeu HTML / JavaScript développé par moi.</p></div>
-        <div class="card"><h3>Projet à venir</h3><p>Nouveau projet en cours.</p></div>
-    </div>
+<h2>Portfolio</h2>
+<div class="cards">
+<!-- Restaurant -->
+<div class="card"><a href="restaurant.html"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Restaurant"></a>
+<h3>Restaurant</h3><p>Site vitrine pour restaurant avec menu et réservation en ligne.</p></div>
+<!-- Boutique -->
+<div class="card"><a href="boutique.html"><img src="https://images.unsplash.com/photo-1605902711622-cfb43c443fdd?auto=format&fit=crop&w=800&q=80" alt="Boutique"></a>
+<h3>Boutique</h3><p>Site e-commerce pour boutique de vêtements ou produits locaux.</p></div>
+<!-- Jeu 2D -->
+<div class="card"><a href="jeu.html"><img src="https://images.unsplash.com/photo-1581093588401-45629b8ecbb1?auto=format&fit=crop&w=800&q=80" alt="Jeu 2D"></a>
+<h3>Jeu 2D</h3><p>Jeu interactif développé en HTML/JS, nouveau visuel ajouté.</p></div>
+<!-- Portfolio perso -->
+<div class="card"><a href="portfolio.html"><img src="https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&w=800&q=80" alt="Portfolio"></a>
+<h3>Portfolio créatif</h3><p>Présentation des projets et réalisations personnelles.</p></div>
+</div>
+</section>
+
+<!-- NOUVEAUTÉS -->
+<section id="nouveautes">
+<h2>Nouveautés</h2>
+<div class="cards">
+<div class="card"><img src="https://images.unsplash.com/photo-1581091012184-2b63f9d1120d?auto=format&fit=crop&w=800&q=80" alt="Blog design"><h3>Blog design</h3><p>Nouveau blog pour partager astuces et projets récents.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1602524200177-3df5f0c8f4e2?auto=format&fit=crop&w=800&q=80" alt="Jeu interactif"><h3>Jeu interactif</h3><p>Ajout d’un nouveau mini-jeu 2D pour découvrir mes compétences JS.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1616628189000-d8bfb6f0e5da?auto=format&fit=crop&w=800&q=80" alt="Projet boutique"><h3>Projet boutique</h3><p>Refonte complète d’un site e-commerce pour un client.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1581093806534-7b2b8c639f6a?auto=format&fit=crop&w=800&q=80" alt="Nouveau projet"><h3>Nouveau projet</h3><p>Création d’un site pour un restaurant moderne.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1573164574395-d191a0a1b630?auto=format&fit=crop&w=800&q=80" alt="Portfolio avancé"><h3>Portfolio avancé</h3><p>Mise à jour du portfolio avec nouvelles créations et animations.</p></div>
+</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <div class="contact">
-        <h2>Contact</h2>
-        <p>Un projet ? Une idée ? Parlons-en !</p>
-        <form action="mailto:ghilesusma@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="nom" placeholder="Votre nom" required><br><br>
-            <input type="email" name="email" placeholder="Votre email" required><br><br>
-            <textarea name="message" placeholder="Votre message" required></textarea><br><br>
-            <button type="submit">Envoyer</button>
-        </form>
-        <a href="mailto:ghilesusma@gmail.com">Ou envoyez-moi directement un email</a>
-    </div>
+<h2>Contact</h2>
+<div class="contact">
+<p>Un projet ? Une idée ? Parlons-en !</p>
+<form action="mailto:ghilesusma@gmail.com" method="post" enctype="text/plain">
+<input type="text" name="nom" placeholder="Votre nom" required>
+<input type="email" name="email" placeholder="Votre email" required>
+<textarea name="message" placeholder="Votre message" required></textarea>
+<button type="submit">Envoyer</button>
+</form>
+<p><a href="mailto:ghilesusma@gmail.com">Ou envoyez-moi directement un email</a></p>
+</div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-    © 2025 – Ghiles | Créateur de sites web
-</footer>
+<footer>© 2025 – Ghiles | Créateur de sites web</footer>
 
-<!-- JS: Fond animé header + animation sections -->
+<!-- JS -->
 <script>
-/* HEADER PARTICULES */
-const canvas = document.getElementById('headerCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const particles = [];
-for(let i=0;i<100;i++){
-    particles.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        size: Math.random()*3+1,
-        speedX: (Math.random()-0.5)*1.5,
-        speedY: (Math.random()-0.5)*1.5
-    });
-}
-function animate(){
+// Header animation : vagues simples
+const canvas=document.getElementById('headerCanvas');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+let t=0;
+function draw(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-        ctx.fillStyle='#60a5fa';
-        ctx.fill();
-        p.x += p.speedX;
-        p.y += p.speedY;
-        if(p.x<0||p.x>canvas.width)p.speedX*=-1;
-        if(p.y<0||p.y>canvas.height)p.speedY*=-1;
-    });
-    requestAnimationFrame(animate);
+    ctx.fillStyle='#111827'; ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.strokeStyle='#22c55e'; ctx.lineWidth=2;
+    ctx.beginPath();
+    for(let i=0;i<canvas.width;i+=10){
+        ctx.lineTo(i,Math.sin(i*0.02+t)*20+canvas.height/2);
+    }
+    ctx.stroke();
+    t+=0.05;
+    requestAnimationFrame(draw);
 }
-animate();
-window.addEventListener('resize',()=>{
-    canvas.width=window.innerWidth;
-    canvas.height=window.innerHeight;
-});
+draw();
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
 
-/* ANIMATION SECTIONS AU SCROLL */
-const sections = document.querySelectorAll('section');
-window.addEventListener('scroll', ()=>{
-    sections.forEach(section=>{
-        if(window.scrollY + window.innerHeight > section.offsetTop + 100){
-            section.classList.add('visible');
-        }
-    });
+// Sections animation
+const sections=document.querySelectorAll('section');
+window.addEventListener('scroll',()=>{
+sections.forEach(section=>{if(window.scrollY+window.innerHeight>section.offsetTop+100){section.classList.add('visible');}});
 });
 </script>
 
 </body>
 </html>
+
