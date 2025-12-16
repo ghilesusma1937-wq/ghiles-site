@@ -119,13 +119,29 @@
             font-size: 14px;
             opacity: 0.8;
         }
+.cta {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 35px;
+    background: #22c55e;
+    color: #020617;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.cta:hover {
+    background: #16a34a;
+}
+
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Ghiles</h1>
-    <p>Créateur de sites web modernes & professionnels</p>
+    <h1>Ghiles – Créateur Web</h1>
+    <p>Je crée des sites modernes et professionnels pour particuliers et entreprises</p>
+    <a href="#contact" class="cta">Demander un devis</a>
 </header>
 
 <nav>
@@ -177,7 +193,50 @@
         <a href="mailto:ghilesusma@gmail.com">Me contacter</a>
     </div>
 </section>
-
+<section>
+    <h2>Pourquoi me choisir ?</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>✅ Sérieux</h3>
+            <p>Je respecte les délais et les besoins du client.</p>
+        </div>
+        <div class="card">
+            <h3>⚡ Rapidité</h3>
+            <p>Sites rapides et optimisés.</p>
+        </div>
+        <div class="card">
+            <h3>📱 Compatible mobile</h3>
+            <p>Sites parfaits sur téléphone et PC.</p>
+        </div>
+    </div>
+</section>
+<section>
+    <h2>Portfolio</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Site vitrine</h3>
+            <p>Site professionnel moderne.</p>
+        </div>
+        <div class="card">
+            <h3>Jeu 2D</h3>
+            <p>Jeu HTML / JavaScript.</p>
+        </div>
+        <div class="card">
+            <h3>Projet à venir</h3>
+            <p>Nouveau projet en cours.</p>
+        </div>
+    </div>
+</section><section id="contact">
+    <div class="contact">
+        <h2>Contact</h2>
+        <form action="mailto:ghilesusma@gmail.com" method="post" enctype="text/plain">
+            <input type="text" placeholder="Votre nom" required><br><br>
+            <input type="email" placeholder="Votre email" required><br><br>
+            <textarea placeholder="Votre message" required></textarea><br><br>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</section>
 <footer>
     © 2025 – Ghiles | Créateur de sites web
 </footer>
