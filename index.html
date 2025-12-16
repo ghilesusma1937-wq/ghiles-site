@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ghiles | Créateur de sites web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #020617;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #e5e7eb;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #60a5fa;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #020617;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #93c5fd;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #1e3a8a, #020617);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .contact a:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ghiles</h1>
+    <p>Créateur de sites web modernes & professionnels</p>
+</header>
+
+<nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#apropos">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="apropos">
+    <h2>À propos</h2>
+    <p>
+        Je m'appelle <strong>Ghiles</strong>, créateur de sites web modernes, rapides et élégants.
+        Je conçois des sites professionnels adaptés aux besoins des clients : entreprises,
+        projets personnels, boutiques et portfolios.
+    </p>
+</section>
+
+<section id="services">
+    <h2>Services</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>🌐 Sites vitrines</h3>
+            <p>Présentez votre activité avec un site professionnel, moderne et clair.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎨 Design moderne</h3>
+            <p>Design élégant, responsive et optimisé pour tous les écrans.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Performance</h3>
+            <p>Sites rapides, propres et optimisés pour une meilleure expérience utilisateur.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔒 Fiabilité</h3>
+            <p>Code propre, sécurisé et facile à maintenir.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="contact">
+        <h2>Contact</h2>
+        <p>Un projet ? Une idée ? Parlons-en.</p>
+        <p><strong>Email :</strong> ghilesusma@gmail.com</p>
+        <a href="mailto:ghilesusma@gmail.com">Me contacter</a>
+    </div>
+</section>
+
+<footer>
+    © 2025 – Ghiles | Créateur de sites web
+</footer>
+
+</body>
+</html>
