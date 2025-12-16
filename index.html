@@ -12,7 +12,6 @@
         /* === RESET & BASE === */
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family:'Segoe UI', Arial, sans-serif; background:#0f172a; color:#e5e7eb; line-height:1.6; }
-
         h1,h2,h3{ margin-bottom:15px; }
         a{ text-decoration:none; }
 
@@ -52,6 +51,10 @@
         /* FOOTER */
         footer { background:#020617; text-align:center; padding:25px; font-size:14px; opacity:0.8; }
 
+        /* === ANIMATIONS SECTIONS === */
+        section { opacity:0; transform:translateY(30px); transition:all 1s ease; }
+        section.visible { opacity:1; transform:translateY(0); }
+
         /* RESPONSIVE */
         @media(max-width:600px){ .header-content h1{ font-size:50px; } .header-content h2{ font-size:24px; } }
     </style>
@@ -79,30 +82,23 @@
 
 <!-- À PROPOS -->
 <section id="apropos">
-    <h2>À propos</h2>
+    <h2>À propos de moi</h2>
     <p>
         Je m'appelle <strong>Ghiles</strong>, créateur de sites web modernes et professionnels.
-        Je conçois des sites pour particuliers, entreprises et projets personnels, avec un design élégant,
-        rapide et optimisé pour tous les appareils.
+        Passionné par le web, je conçois des sites rapides, élégants et adaptés à tous les appareils.
+        Je travaille aussi bien pour les particuliers que pour les entreprises, en mettant toujours
+        l’accent sur la qualité, la performance et le design. Chaque projet est pour moi une opportunité
+        de créer quelque chose d’unique et qui aide mes clients à se démarquer sur Internet.
     </p>
 </section>
 
 <!-- POURQUOI ME CHOISIR -->
-<section>
+<section id="pourquoi">
     <h2>Pourquoi me choisir ?</h2>
     <div class="cards">
-        <div class="card">
-            <h3>✅ Sérieux</h3>
-            <p>Respect des délais et besoins du client.</p>
-        </div>
-        <div class="card">
-            <h3>⚡ Rapidité</h3>
-            <p>Sites rapides et optimisés pour tous les écrans.</p>
-        </div>
-        <div class="card">
-            <h3>📱 Mobile friendly</h3>
-            <p>Parfait sur téléphone, tablette et PC.</p>
-        </div>
+        <div class="card"><h3>✅ Sérieux</h3><p>Respect des délais et besoins du client.</p></div>
+        <div class="card"><h3>⚡ Rapidité</h3><p>Sites rapides et optimisés pour tous les écrans.</p></div>
+        <div class="card"><h3>📱 Mobile friendly</h3><p>Parfait sur téléphone, tablette et PC.</p></div>
     </div>
 </section>
 
@@ -147,16 +143,16 @@
     © 2025 – Ghiles | Créateur de sites web
 </footer>
 
-<!-- JS: Fond animé header -->
+<!-- JS: Fond animé header + animation sections -->
 <script>
+/* HEADER PARTICULES */
 const canvas = document.getElementById('headerCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const particles = [];
-const numParticles = 100;
-for(let i=0;i<numParticles;i++){
+for(let i=0;i<100;i++){
     particles.push({
         x: Math.random()*canvas.width,
         y: Math.random()*canvas.height,
@@ -165,7 +161,6 @@ for(let i=0;i<numParticles;i++){
         speedY: (Math.random()-0.5)*1.5
     });
 }
-
 function animate(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     particles.forEach(p=>{
@@ -181,10 +176,19 @@ function animate(){
     requestAnimationFrame(animate);
 }
 animate();
-
 window.addEventListener('resize',()=>{
     canvas.width=window.innerWidth;
     canvas.height=window.innerHeight;
+});
+
+/* ANIMATION SECTIONS AU SCROLL */
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', ()=>{
+    sections.forEach(section=>{
+        if(window.scrollY + window.innerHeight > section.offsetTop + 100){
+            section.classList.add('visible');
+        }
+    });
 });
 </script>
 
